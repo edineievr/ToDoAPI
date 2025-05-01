@@ -35,3 +35,4 @@ D:\Projects\TodoAPI\ToDoAPI\ToDoAPI\obj\Debug\net7.0\refint\ToDoAPI.dll
 D:\Projects\TodoAPI\ToDoAPI\ToDoAPI\obj\Debug\net7.0\ToDoAPI.pdb
 D:\Projects\TodoAPI\ToDoAPI\ToDoAPI\obj\Debug\net7.0\ToDoAPI.genruntimeconfig.cache
 D:\Projects\TodoAPI\ToDoAPI\ToDoAPI\obj\Debug\net7.0\ref\ToDoAPI.dll
+D:\Projects\TodoAPI\ToDoAPI\ToDoAPI\obj\Debug\net7.0\ToDoAPI.sourcelink.json

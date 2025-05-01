@@ -11,11 +11,27 @@ namespace ToDoAPI.Models
 
         public ToDoList() { }
 
+        public List<ToDoTask> GetAllTasks()
+        {
+            return Tasks;
+        }
+
+        public ToDoTask GetById(int id)
+        {
+            var task = Tasks.Find(x => x.Id == id);
+
+            if (task == null)
+            {
+                throw new DomainException("Task not found.");
+            }
+            return task;
+        }
+
         public void AddTask(ToDoTask task)
         {
             if (task == null)
             {
-                throw new DomainException("Task cannot be null");
+                throw new DomainException("Task cannot be null.");
             }
 
             Tasks.Add(task);
@@ -28,13 +44,16 @@ namespace ToDoAPI.Models
 
             if (t == null)
             {
-                throw new DomainException("Not Found!");
+                throw new DomainException("Not Found.");
             }
 
             Tasks.Remove(t);
         }
 
-
-
+        public void UpdateTask(int id, string title, string description)
+        {
+            var task = GetById(id);         
+            task.Update(title, description);            
+        }
     }
 }
