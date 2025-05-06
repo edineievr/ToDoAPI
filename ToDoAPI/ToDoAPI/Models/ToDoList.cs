@@ -50,6 +50,16 @@ namespace ToDoAPI.Models
             Tasks.Remove(t);
         }
 
+        public void RemoveAll()
+        {
+            if (Tasks.Count <= 0)
+            {
+                throw new DomainException("List is already empty.");
+            }
+            
+            Tasks.Clear();
+        }
+
         public void UpdateTask(int id, string title, string description)
         {
             var task = GetById(id);         
