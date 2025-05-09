@@ -10,7 +10,8 @@ namespace ToDoAPI.Models
         public string Description { get; set; }
         public DateTime CreationDate  { get; set; }
         public DateTime EndDate { get; set; }
-        public bool IsCompleted { get; set; }
+        public string? Tag { get; set; }
+        public bool IsCompleted { get; set; } 
 
 
         public ToDoTask()
@@ -51,6 +52,14 @@ namespace ToDoAPI.Models
             
             Title = title;
             Description = description;
+        }
+
+        public void AddTag(string tag)
+        {
+            if(tag.Length > 10)
+            {
+                throw new DomainException("Tag cannot have more than 10 characters");
+            }
         }
 
         public void SetAsCompleted(DateTime endDate)

@@ -60,6 +60,13 @@ namespace ToDoAPI.Models
             Tasks.Clear();
         }
 
+        public void AddTag(int id, string tag)
+        {
+            var t = GetById(id);
+
+            t.AddTag(tag);
+        }
+
         public void UpdateTask(int id, string title, string description)
         {
             var task = GetById(id);         

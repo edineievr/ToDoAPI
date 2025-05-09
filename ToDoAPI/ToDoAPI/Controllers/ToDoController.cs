@@ -48,7 +48,7 @@ namespace ToDoAPI.Controllers
             }
         }
 
-        [HttpPut]
+        [HttpDelete]
         public ActionResult<List<ToDoTask>> DeleteAll()
         {
             try
@@ -76,7 +76,7 @@ namespace ToDoAPI.Controllers
             catch (DomainException e)
             {
                 return BadRequest(e.Message);
-            }           
+            }         
 
         }
     }
