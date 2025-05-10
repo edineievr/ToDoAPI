@@ -24,17 +24,12 @@ namespace ToDoAPI.Models
             if (string.IsNullOrEmpty(title))
             {
                 throw new ArgumentNullException("title cannot be empty.");
-            }
-
-            if (creationDate > DateTime.Now)
-            {
-                throw new DomainException("Creation date cannot be in the future.");
-            }
+            }        
                         
             Id = id;
             Title = title;
             Description = description;
-            CreationDate = creationDate;
+            CreationDate = DateTime.Now;
             IsCompleted = false;            
         }
 
@@ -64,7 +59,7 @@ namespace ToDoAPI.Models
 
         public void SetAsCompleted(DateTime endDate)
         {
-            if (endDate > CreationDate)
+            if (endDate < CreationDate)
             {
                 throw new DomainException("End date cannot be before creation date.");
             }
